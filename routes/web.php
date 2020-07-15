@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+//注册
+Route::get("/admin/reg","Admin\RegController@reg");
+Route::post("/admin/regdo","Admin\RegController@regdo");
+
+//登陆
+Route::get("/admin/login","Admin\LoginController@login");
+Route::post("/admin/logindo","Admin\LoginController@logindo");
