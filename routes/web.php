@@ -16,9 +16,15 @@ Route::get('/', function () {
 });
 
 //注册
-Route::get("/admin/reg","Admin\RegController@reg");
-Route::post("/admin/regdo","Admin\RegController@regdo");
+Route::get("/user/reg","User\RegController@reg");
+Route::post("/user/regdo","User\RegController@regdo");
 
 //登陆
-Route::get("/admin/login","Admin\LoginController@login");
-Route::post("/admin/logindo","Admin\LoginController@logindo");
+Route::get("/user/login","User\LoginController@login");
+Route::post("/user/logindo","User\LoginController@logindo");
+
+//首页
+Route::get("/user/index","User\IndexController@index");
+
+//个人中心
+Route::get("/user/personage","User\PersonageController@personage")->middleware("checklogin");

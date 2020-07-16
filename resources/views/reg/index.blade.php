@@ -9,8 +9,8 @@
 </head>
 <body>
 <center>
-    <h1>登陆</h1>
-    <form action="{{url("admin/logindo")}}" method="post">
+    <h1>注册</h1>
+    <form action="{{url("/user/regdo")}}" method="post">
         <table>
             @csrf
             <tr>
@@ -22,7 +22,11 @@
                 <td><input type="password" name="user_pwd"></td>
             </tr>
             <tr>
-                <td><input type="submit" value="登陆"></td>
+                <td>电话</td>
+                <td><input type="text" name="user_phone"></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="注册"></td>
             </tr>
         </table>
     </form>

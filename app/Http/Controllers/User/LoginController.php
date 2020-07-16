@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Model\UserModel;
@@ -10,7 +10,7 @@ class LoginController extends Controller
 {
     //登陆
     public function login(){
-        return view("admin.login.index");
+        return view("login.index");
     }
     //注册
     public function logindo(){
@@ -24,7 +24,7 @@ class LoginController extends Controller
             $pwd=password_verify($data["user_pwd"],$res->user_pwd);
             if($pwd==true){
                 session(["user"=>$data]);
-                return redirect("admin/index");
+                return redirect("user/index");
             }
         }
         echo "账号或密码错误";

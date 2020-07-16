@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Model\UserModel;
@@ -10,7 +10,7 @@ class RegController extends Controller
 {
     //注册
     public function reg(){
-        return view("admin.reg.index");
+        return view("reg.index");
     }
     //执行注册
     public function regdo(){
@@ -20,7 +20,7 @@ class RegController extends Controller
         $data["user_pwd"]=password_hash($data["user_pwd"],PASSWORD_DEFAULT);
         $res=UserModel::create($data);
         if($res){
-            return redirect("admin/login");
+            return redirect("user/login");
         }else{
             echo "注册失败";
             header("refresh:1;url=reg");
